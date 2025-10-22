@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - SafeHome</title>
+    <!-- Fonte limpa e legível -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Sobre.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+<header>
+    <div class="container nav">
+      <nav aria-label="Menu principal">
+        <a href="SafeHome.html" class="brand" aria-label="SafeHome - Início">SafeHome</a>
+
+        <button class="menu-btn" aria-expanded="false" aria-controls="main-nav" id="menuBtn" aria-label="Abrir menu">
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </button>
+
+        <ul class="nav-list" id="main-nav">
+          <li><a href="SafeHome.html">Home</a></li>
+          <li><a href="Sobre.html" aria-current="page">Sobre</a></li>
+          <li><a href="Serviços.html">Serviços</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
+
+<main id="main-content">
+  <!-- Hero com chamada clara e ilustração -->
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <h1 id="hero-title">Segurança residencial inteligente e acessível</h1>
+      <p class="lead">Na SafeHome unimos tecnologia, design e suporte humano para proteger sua casa e quem você ama — com controle total pelo seu celular.</p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="Serviços.html">Conheça os serviços</a>
+        <a class="btn ghost" href="#contato">Fale conosco</a>
+      </div>
+
+      <div class="trust-row" aria-hidden="true">
+        <div><strong>+10k</strong><span> casas protegidas</span></div>
+        <div><strong>24/7</strong><span> suporte ativo</span></div>
+        <div><strong>5 anos</strong><span> de inovação</span></div>
+      </div>
+    </div>
+
+    <div class="hero-figure" aria-hidden="true">
+      <!-- ilustração simples SVG representando casa/segurança -->
+      <svg width="320" height="220" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+        <rect x="8" y="64" width="304" height="136" rx="12" fill="#fff" opacity="0.9"/>
+        <path d="M160 12L16 96h288L160 12z" fill="#F5F6FF"/>
+        <rect x="120" y="104" width="80" height="60" rx="6" fill="#E9ECFF"/>
+        <circle cx="160" cy="134" r="6" fill="#222"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Sobre detalhado -->
+  <section class="about container">
+    <h2>Sobre a SafeHome</h2>
+    <p>A SafeHome foi fundada com a missão de tornar a segurança residencial acessível, confiável e integrada com as rotinas modernas. Nossos sistemas combinam sensores, câmeras e automação com uma plataforma simples e atendimento humano.</p>
+
+    <div class="features-grid" role="list">
+      <article class="card" role="listitem">
+        <div class="icon" aria-hidden="true">
+          <!-- ícone -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 9v11a1 1 0 001 1h5v-7h6v7h5a1 1 0 001-1V9l-9-7z" fill="#2B2B8F"/></svg>
+        </div>
+        <h3>Inovação contínua</h3>
+        <p>Atualizações e integração com as melhores tecnologias para manter sua casa sempre protegida.</p>
+      </article>
+
+      <article class="card" role="listitem">
+        <div class="icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 1.5a7.5 7.5 0 107.5 7.5A7.51 7.51 0 0012 1.5z" fill="#2B2B8F"/></svg>
+        </div>
+        <h3>Confiabilidade</h3>
+        <p>Operação estável, backups e suporte 24/7 para que você nunca fique desprotegido.</p>
+      </article>
+
+      <article class="card" role="listitem">
+        <div class="icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="#2B2B8F" stroke-width="1.5"/></svg>
+        </div>
+        <h3>Fácil de usar</h3>
+        <p>App intuitivo, instalação simplificada e painel de controle acessível para toda a família.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contato e mapa -->
+  <section id="contato" class="contact container">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Fale com a SafeHome</h3>
+        <p>Estamos prontos para ajudar. Envie uma mensagem ou agende uma demonstração.</p>
+
+        <ul class="contact-info">
+          <li><strong>Endereço:</strong> Av. Alameda, 123 — Osvaldo Cruz</li>
+          <li><strong>Telefone:</strong> (11) 98765-4321</li>
+          <li><strong>Email:</strong> contato@safehome.com</li>
+        </ul>
+
+        <form class="contact-form" action="https://formspree.io/f/mzzjldla" method="post" aria-label="Formulário de contato">
+          <label>
+            <span class="visually-hidden">Nome</span>
+            <input type="text" name="name" placeholder="Seu nome" required>
+          </label>
+          <label>
+            <span class="visually-hidden">Email</span>
+            <input type="email" name="email" placeholder="seu@exemplo.com" required>
+          </label>
+          <label>
+            <span class="visually-hidden">Mensagem</span>
+            <textarea name="message" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Enviar mensagem</button>
+            <button class="btn ghost" type="reset">Limpar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mapa-wrapper" aria-label="Mapa e localização">
+        <div class="mapa-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!..." allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa - SafeHome"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="SafeHome.html">SafeHome</a>
+      <p class="muted">Protegendo seu lar com tecnologia e confiança.</p>
+    </div>
+    <div>
+      <small>&copy; 2025 SafeHome. Todos os direitos reservados.</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('main-nav');
+
+  btn.addEventListener('click', function () {
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('show');
+    this.classList.toggle('active');
+  });
+
+  // Fechar menu com Esc
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      nav.classList.remove('show');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  // Fechar ao clicar fora (em telas pequenas)
+  document.addEventListener('click', function(e){
+    if(!btn.contains(e.target) && !nav.contains(e.target)){
+      nav.classList.remove('show');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>

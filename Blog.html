@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog - SafeHome</title>
+  <link rel="stylesheet" href="Blog.css">
+</head>
+<body>
+  <header class="blog-header">
+    <div class="container header-inner">
+      <a href="SafeHome.html" class="brand">SafeHome</a>
+      <nav class="nav-top" aria-label="Menu principal">
+        <a href="SafeHome.html">Home</a>
+        <a href="Sobre.html">Sobre</a>
+        <a href="Serviços.html">Serviços</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-area" aria-label="Pesquisar artigos">
+      <div class="search-row">
+        <label for="search" class="visually-hidden">Pesquisar artigos</label>
+        <input id="search" type="search" placeholder="Pesquisar por título ou palavra-chave..." aria-label="Pesquisar artigos" />
+        <button id="clearBtn" class="btn-ghost" aria-label="Limpar pesquisa">Limpar</button>
+      </div>
+
+      <div class="tags-row" aria-hidden="false">
+        <button class="tag-btn active" data-tag="all">Todos</button>
+        <button class="tag-btn" data-tag="seguranca">Segurança</button>
+        <button class="tag-btn" data-tag="instalacao">Instalação</button>
+        <button class="tag-btn" data-tag="privacidade">Privacidade</button>
+        <button class="tag-btn" data-tag="dicas">Dicas</button>
+      </div>
+    </section>
+
+    <section class="posts-grid" id="posts" aria-live="polite">
+      
+      <article class="post-card" data-title="Como escolher a câmera ideal" data-tags="seguranca,instalacao">
+        <img src="Blog.jpg" alt="Câmera" class="post-thumb" />
+        <div class="post-body">
+          <h3 class="post-title">Como escolher a câmera ideal</h3>
+          <p class="post-excerpt">Guia rápido para escolher câmeras de segurança conforme ambiente, resolução e orçamento.</p>
+          <div class="meta">
+            <time datetime="2025-02-01">1 fev 2025</time>
+            <div class="post-tags"><span>Segurança</span><span>Instalação</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card" data-title="5 dicas para proteger sua privacidade" data-tags="privacidade,dicas">
+        <img src="Blog 4.webp" alt="Privacidade" class="post-thumb" />
+        <div class="post-body">
+          <h3 class="post-title">5 dicas para proteger sua privacidade</h3>
+          <p class="post-excerpt">Medidas práticas para manter seus dispositivos e dados pessoais seguros em casa.</p>
+          <div class="meta">
+            <time datetime="2025-01-20">20 jan 2025</time>
+            <div class="post-tags"><span>Privacidade</span><span>Dicas</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card" data-title="Instalação passo a passo: alarme doméstico" data-tags="instalacao">
+        <img src="Blog 3.jpg" alt="Instalação" class="post-thumb" />
+        <div class="post-body">
+          <h3 class="post-title">Instalação passo a passo: alarme doméstico</h3>
+          <p class="post-excerpt">Checklist e etapas para instalar um sistema de alarme com segurança e eficiência.</p>
+          <div class="meta">
+            <time datetime="2024-12-05">5 dez 2024</time>
+            <div class="post-tags"><span>Instalação</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card" data-title="Automação e segurança: vale a pena?" data-tags="seguranca,dicas">
+        <img src="Blog 2.jpg" alt="Automação" class="post-thumb" />
+        <div class="post-body">
+          <h3 class="post-title">Automação e segurança: vale a pena?</h3>
+          <p class="post-excerpt">Prós e contras da automação residencial aplicada à segurança doméstica.</p>
+          <div class="meta">
+            <time datetime="2024-11-10">10 nov 2024</time>
+            <div class="post-tags"><span>Segurança</span><span>Dicas</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card" data-title="Atualize seu sistema: quando e por que" data-tags="seguranca,privacidade">
+        <img src="Blog 5.png" alt="Atualização" class="post-thumb" />
+        <div class="post-body">
+          <h3 class="post-title">Atualize seu sistema: quando e por que</h3>
+          <p class="post-excerpt">Entenda a importância de manter firmware e apps atualizados para segurança contínua.</p>
+          <div class="meta">
+            <time datetime="2024-10-02">2 out 2024</time>
+            <div class="post-tags"><span>Segurança</span><span>Privacidade</span></div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="blog-footer">
+    <div class="container">
+      <p>© 2025 SafeHome — Blog de segurança residencial.</p>
+    </div>
+  </footer>
+
+  <script>
+    
+    (function(){
+      const input = document.getElementById('search');
+      const posts = Array.from(document.querySelectorAll('.post-card'));
+      const tagBtns = Array.from(document.querySelectorAll('.tag-btn'));
+      const clearBtn = document.getElementById('clearBtn');
+      let activeTag = 'all';
+
+      function filterPosts(){
+        const q = (input.value || '').trim().toLowerCase();
+        posts.forEach(post=>{
+          const title = post.dataset.title.toLowerCase();
+          const tags = post.dataset.tags.toLowerCase();
+          const matchesQuery = !q || title.includes(q) || tags.includes(q);
+          const matchesTag = activeTag === 'all' || tags.split(',').includes(activeTag);
+          post.style.display = (matchesQuery && matchesTag) ? '' : 'none';
+        });
+      }
+
+      input.addEventListener('input', filterPosts);
+      clearBtn.addEventListener('click', ()=>{
+        input.value = '';
+        activeTag = 'all';
+        tagBtns.forEach(b=>b.classList.toggle('active', b.dataset.tag==='all'));
+        filterPosts();
+      });
+
+      tagBtns.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          activeTag = btn.dataset.tag;
+          tagBtns.forEach(b=>b.classList.toggle('active', b===btn));
+          filterPosts();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
