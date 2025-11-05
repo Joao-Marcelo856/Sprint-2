@@ -1,11 +1,10 @@
-
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#ffffff;
   --container:1100px;
   --text:#14213d;
   --muted:#667085;
-  --accent:#2b2b8f;
+  --accent:#ff523b;
   --card:#ffffff;
   --radius:12px;
   --shadow: 0 8px 24px rgba(16,24,40,0.06);
@@ -114,7 +113,7 @@ html,body{
 }
 
 .tag-btn.active {
-    background:linear-gradient(90deg,var(--accent),#6c63ff);
+    background:linear-gradient(90deg,var(--accent),#ff523b);
     color:#fff;
     border-color:transparent;
     box-shadow:var(--shadow)
@@ -123,7 +122,7 @@ html,body{
 
 .posts-grid {
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
     gap:18px;
     padding:24px 0
 }
@@ -213,3 +212,67 @@ html,body{
     clip:rect(0,0,0,0);
     border:0
 }
+
+/* general fluid adjustments */
+.container{ padding:16px; max-width:1200px; }
+
+/* search area responsive */
+.search-row{ gap:8px; }
+#search{ font-size:1rem; }
+
+/* small screens */
+@media (max-width:680px){
+  .header-inner{ flex-direction:column; align-items:flex-start; gap:12px; }
+  .search-row{ flex-direction:column; }
+  #search{ width:100%; }
+  .tags-row{ justify-content:flex-start; }
+  .posts-grid{ gap:12px; }
+}
+
+/* tablets */
+@media (max-width:1000px) {
+  .posts-grid{ grid-template-columns: repeat(2, 1fr); }
+  .post-thumb{ height:200px; }
+}
+
+/* large desktop / TVs */
+@media (min-width:1600px){
+  .container{ max-width:1600px; padding:28px; }
+  .posts-grid{ grid-template-columns: repeat(4, 1fr); gap:20px; }
+  .post-thumb{ height:220px; }
+}
+
+/* ensure accessibility on very small screens */
+@media (max-width:420px){
+  .post-thumb{ height:150px; }
+  .post-title{ font-size:1rem; }
+  .post-excerpt{ font-size:0.9rem; }
+}
+
+  /* header responsivo: permite wrap e melhor espaçamento */
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+
+  /* força container mais fluido em telas grandes */
+  .container{ padding:16px; max-width:1400px; }
+
+  /* nav-top pode sumir em telas menores para evitar acúmulo na barra */
+  @media (max-width:720px){
+    .nav-top{ display:none; }
+    .header-inner{ gap:10px; }
+  }
+
+  /* posts grid já usa auto-fit; garantir limites visuais em tablets e TVs */
+  @media (max-width:1000px){
+    .posts-grid{ grid-template-columns: repeat(2, 1fr); gap:14px; }
+    .post-thumb{ height:200px; }
+  }
+  @media (min-width:1600px){
+    .posts-grid{ grid-template-columns: repeat(4, 1fr); gap:20px; }
+    .post-thumb{ height:220px; }
+  }
+
+  /* nav/menu em mobile — evitar overflow e garantir visual por cima do conteúdo */
+  .nav-top, .nav{
+    z-index: 1100; /* evita ficar abaixo de dropdowns */
+  }
+
